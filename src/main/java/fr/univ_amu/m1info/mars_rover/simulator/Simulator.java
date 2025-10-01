@@ -11,11 +11,7 @@ public final class Simulator {
     private Simulator() {}
 
     public static MarsRoverOutput run(MarsRoverInput input) {
-        Grid grid = switch (input.grid().kind()) {
-            case RECTANGULAR -> new RectangularGrid(input.grid().width(), input.grid().height());
-            case TOROIDAL    -> new ToroidalGrid(input.grid().width(), input.grid().height());
-            case SPHERICAL   -> throw new UnsupportedOperationException("SPHERICAL not supported yet.");
-        };
+        Grid grid = GridFactory.create(input.grid());
 
         // Track explored cells across all rovers (include starting cells)
         Set<Coordinates> explored = new HashSet<>();
