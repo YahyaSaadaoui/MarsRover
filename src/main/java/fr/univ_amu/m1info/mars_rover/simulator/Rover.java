@@ -18,13 +18,9 @@ public final class Rover {
     }
 
     public void turnRight() {
-        if (destroyed) return;
-        state = new Position(state.coordinates(), switch (state.orientation()) {
-            case NORTH -> Direction.EAST;
-            case EAST  -> Direction.SOUTH;
-            case SOUTH -> Direction.WEST;
-            case WEST  -> Direction.NORTH;
-        });
+        if (!destroyed) {
+            state = new Position(state.coordinates(), state.orientation().right());
+        }
     }
     public void moveForward(Grid grid) {
         if (destroyed) return;
