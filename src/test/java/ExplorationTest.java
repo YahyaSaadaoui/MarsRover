@@ -1,11 +1,13 @@
-package fr.univ_amu.m1info.mars_rover.simulator.Testing;
-
 import fr.univ_amu.m1info.mars_rover.input.*;
 import fr.univ_amu.m1info.mars_rover.output.MarsRoverOutput;
+import fr.univ_amu.m1info.mars_rover.simulator.Coordinates;
+import fr.univ_amu.m1info.mars_rover.simulator.Direction;
+import fr.univ_amu.m1info.mars_rover.simulator.Position;
+import fr.univ_amu.m1info.mars_rover.simulator.Simulator;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
-import fr.univ_amu.m1info.mars_rover.simulator.*;
+
 public class ExplorationTest {
 
     @Test

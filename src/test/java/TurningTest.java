@@ -1,5 +1,3 @@
-package fr.univ_amu.m1info.mars_rover.simulator.Testing;
-
 import fr.univ_amu.m1info.mars_rover.simulator.Coordinates;
 import fr.univ_amu.m1info.mars_rover.simulator.Direction;
 import fr.univ_amu.m1info.mars_rover.simulator.Position;
