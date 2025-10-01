@@ -12,13 +12,9 @@ public final class Rover {
     public boolean isDestroyed() { return destroyed; }
 
     public void turnLeft() {
-        if (destroyed) return;
-        state = new Position(state.coordinates(), switch (state.orientation()) {
-            case NORTH -> Direction.WEST;
-            case WEST  -> Direction.SOUTH;
-            case SOUTH -> Direction.EAST;
-            case EAST  -> Direction.NORTH;
-        });
+        if (!destroyed) {
+            state = new Position(state.coordinates(), state.orientation().left());
+        }
     }
 
     public void turnRight() {
