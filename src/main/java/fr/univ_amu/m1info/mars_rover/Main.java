@@ -1,7 +1,5 @@
 package fr.univ_amu.m1info.mars_rover;
 
-import com.fasterxml.jackson.core.io.CharacterEscapes;
-import com.fasterxml.jackson.core.io.SerializedString;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SequenceWriter;
@@ -22,7 +20,7 @@ public final class Main {
 
     public static void main(String[] args) {
         // args[0] (optional): input path; args[1] (optional): output path
-        final String inPath  = args.length >= 1 ? args[0] : "/config.yml";   // default: classpath resource
+        final String inPath  = args.length >= 1 ? args[0] : "/rectangular.yml";   // default: classpath resource
         final String outPath = args.length >= 2 ? args[1] : "output.yml";    // default: CWD/output.yml
 
         final ObjectMapper mapper = new ObjectMapper(
@@ -34,7 +32,7 @@ public final class Main {
         try {
             MarsRoverInput input;
             if (inPath.startsWith("/")) {
-                // Read from classpath resource (e.g., /config.yml in src/main/resources)
+                // Read from classpath resource (e.g., /rectangular.yml in src/main/resources)
                 try (InputStream is = Main.class.getResourceAsStream(inPath)) {
                     if (is == null) throw new FileNotFoundException("Classpath resource not found: " + inPath);
                     input = mapper.readValue(is, MarsRoverInput.class);
