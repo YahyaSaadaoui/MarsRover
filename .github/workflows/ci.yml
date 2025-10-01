@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew --no-daemon --build-cache build
 
       - name: Test (prints JaCoCo coverage summary)
-        run: ./gradlew --no-daemon test jacocoTestReport jacocoLog
+        run: ./gradlew --no-daemon test jacocoTestReport jacocoLogTestCoverage
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
